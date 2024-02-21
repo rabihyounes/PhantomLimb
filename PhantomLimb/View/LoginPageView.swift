@@ -10,15 +10,19 @@ import SwiftUI
 struct LoginPageView: View {
     @State private var email: String = ""
     @State private var pw: String = ""
+    @State private var wrong_pw: Bool = false
+    @Environment(User.self) private var user
 
     var body: some View {
         VStack(alignment: .center) {
             Text("PhantomRehab")
                 .font(.custom("Raleway SemiBold", size: 27))
-                .offset(CGSize(width: 0, height: -60))
+                .offset(CGSize(width: 0, height: -140))
+
             Text("Sign In")
                 .font(.custom("Nunito Regular", size: 27))
 
+            //Username / Email
             ZStack(alignment: .leading) {
                 TextField("Enter email", text: $email)
                     .textFieldStyle(CapsuleTextFieldStyle())
@@ -28,8 +32,9 @@ struct LoginPageView: View {
                     .padding(.leading, 15)
             }
 
+            //Password
             ZStack(alignment: .leading) {
-                TextField("Enter password", text: $pw)
+                SecureField("Enter password", text: $pw)
                     .textFieldStyle(CapsuleTextFieldStyle())
                 Image("lock")
                     .resizable()
@@ -37,8 +42,11 @@ struct LoginPageView: View {
                     .padding(.leading, 15)
             }
 
+            //Login Button
             Button {
-                //TODO
+                if !user.signIn(email: email, password: pw) {
+                    wrong_pw = true
+                }
             } label: {
                 ZStack {
                     Capsule()
@@ -49,6 +57,10 @@ struct LoginPageView: View {
                     Text("Login")
                         .foregroundStyle(Color.black)
                 }
+            }
+            .alert(isPresented: $wrong_pw) {
+                Alert(title: Text("Wrong Account"))
+                
             }
             .padding(10)
 
@@ -86,4 +98,5 @@ struct CapsuleTextFieldStyle: TextFieldStyle {
 
 #Preview {
     LoginPageView()
+        .environment(User())
 }

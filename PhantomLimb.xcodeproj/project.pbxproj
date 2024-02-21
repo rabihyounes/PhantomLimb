@@ -7,18 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C398A2E2B86745A00B590DB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C398A2D2B86745A00B590DB /* HomeView.swift */; };
+		9C398A302B86779900B590DB /* FAQView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C398A2F2B86779900B590DB /* FAQView.swift */; };
 		9C6EF7B22B7D6830000F4A55 /* PhantomLimbApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6EF7B12B7D6830000F4A55 /* PhantomLimbApp.swift */; };
 		9C6EF7B82B7D6832000F4A55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C6EF7B72B7D6832000F4A55 /* Assets.xcassets */; };
 		9C6EF7BB2B7D6832000F4A55 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C6EF7BA2B7D6832000F4A55 /* Preview Assets.xcassets */; };
 		9C6EF7C42B844F1E000F4A55 /* LoginPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6EF7C32B844F1E000F4A55 /* LoginPageView.swift */; };
+		9C6EF7C92B85B44C000F4A55 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6EF7C82B85B44C000F4A55 /* User.swift */; };
+		9C6EF7CB2B8664B9000F4A55 /* MainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6EF7CA2B8664B9000F4A55 /* MainPageView.swift */; };
+		9C6EF7CD2B86653E000F4A55 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6EF7CC2B86653E000F4A55 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9C398A2D2B86745A00B590DB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		9C398A2F2B86779900B590DB /* FAQView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQView.swift; sourceTree = "<group>"; };
 		9C6EF7AE2B7D6830000F4A55 /* PhantomLimb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhantomLimb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C6EF7B12B7D6830000F4A55 /* PhantomLimbApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhantomLimbApp.swift; sourceTree = "<group>"; };
 		9C6EF7B72B7D6832000F4A55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C6EF7BA2B7D6832000F4A55 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9C6EF7C32B844F1E000F4A55 /* LoginPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageView.swift; sourceTree = "<group>"; };
+		9C6EF7C82B85B44C000F4A55 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		9C6EF7CA2B8664B9000F4A55 /* MainPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageView.swift; sourceTree = "<group>"; };
+		9C6EF7CC2B86653E000F4A55 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +83,10 @@
 			isa = PBXGroup;
 			children = (
 				9C6EF7C32B844F1E000F4A55 /* LoginPageView.swift */,
+				9C6EF7CA2B8664B9000F4A55 /* MainPageView.swift */,
+				9C6EF7CC2B86653E000F4A55 /* ContentView.swift */,
+				9C398A2D2B86745A00B590DB /* HomeView.swift */,
+				9C398A2F2B86779900B590DB /* FAQView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -80,6 +94,7 @@
 		9C6EF7C22B8436D2000F4A55 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9C6EF7C82B85B44C000F4A55 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -162,7 +177,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C6EF7B22B7D6830000F4A55 /* PhantomLimbApp.swift in Sources */,
+				9C6EF7CD2B86653E000F4A55 /* ContentView.swift in Sources */,
 				9C6EF7C42B844F1E000F4A55 /* LoginPageView.swift in Sources */,
+				9C398A2E2B86745A00B590DB /* HomeView.swift in Sources */,
+				9C398A302B86779900B590DB /* FAQView.swift in Sources */,
+				9C6EF7CB2B8664B9000F4A55 /* MainPageView.swift in Sources */,
+				9C6EF7C92B85B44C000F4A55 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
