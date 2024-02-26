@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		9C398A2E2B86745A00B590DB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C398A2D2B86745A00B590DB /* HomeView.swift */; };
 		9C398A302B86779900B590DB /* FAQView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C398A2F2B86779900B590DB /* FAQView.swift */; };
+		9C398A322B8D220000B590DB /* MeditationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C398A312B8D220000B590DB /* MeditationView.swift */; };
+		9C398A352B8D290200B590DB /* YouTubePlayerKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9C398A342B8D290200B590DB /* YouTubePlayerKit */; };
+		9C398A372B8D36B200B590DB /* MyNavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C398A362B8D36B200B590DB /* MyNavigationButton.swift */; };
 		9C6EF7B22B7D6830000F4A55 /* PhantomLimbApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6EF7B12B7D6830000F4A55 /* PhantomLimbApp.swift */; };
 		9C6EF7B82B7D6832000F4A55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C6EF7B72B7D6832000F4A55 /* Assets.xcassets */; };
 		9C6EF7BB2B7D6832000F4A55 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C6EF7BA2B7D6832000F4A55 /* Preview Assets.xcassets */; };
@@ -21,6 +24,8 @@
 /* Begin PBXFileReference section */
 		9C398A2D2B86745A00B590DB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		9C398A2F2B86779900B590DB /* FAQView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQView.swift; sourceTree = "<group>"; };
+		9C398A312B8D220000B590DB /* MeditationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationView.swift; sourceTree = "<group>"; };
+		9C398A362B8D36B200B590DB /* MyNavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNavigationButton.swift; sourceTree = "<group>"; };
 		9C6EF7AE2B7D6830000F4A55 /* PhantomLimb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhantomLimb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C6EF7B12B7D6830000F4A55 /* PhantomLimbApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhantomLimbApp.swift; sourceTree = "<group>"; };
 		9C6EF7B72B7D6832000F4A55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -36,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C398A352B8D290200B590DB /* YouTubePlayerKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +93,7 @@
 				9C6EF7CC2B86653E000F4A55 /* ContentView.swift */,
 				9C398A2D2B86745A00B590DB /* HomeView.swift */,
 				9C398A2F2B86779900B590DB /* FAQView.swift */,
+				9C398A312B8D220000B590DB /* MeditationView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -102,6 +109,7 @@
 		9C6EF7C52B845323000F4A55 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				9C398A362B8D36B200B590DB /* MyNavigationButton.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -122,6 +130,9 @@
 			dependencies = (
 			);
 			name = PhantomLimb;
+			packageProductDependencies = (
+				9C398A342B8D290200B590DB /* YouTubePlayerKit */,
+			);
 			productName = PhantomLimb;
 			productReference = 9C6EF7AE2B7D6830000F4A55 /* PhantomLimb.app */;
 			productType = "com.apple.product-type.application";
@@ -150,6 +161,9 @@
 				Base,
 			);
 			mainGroup = 9C6EF7A52B7D6830000F4A55;
+			packageReferences = (
+				9C398A332B8D290200B590DB /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */,
+			);
 			productRefGroup = 9C6EF7AF2B7D6830000F4A55 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -176,8 +190,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C398A322B8D220000B590DB /* MeditationView.swift in Sources */,
 				9C6EF7B22B7D6830000F4A55 /* PhantomLimbApp.swift in Sources */,
 				9C6EF7CD2B86653E000F4A55 /* ContentView.swift in Sources */,
+				9C398A372B8D36B200B590DB /* MyNavigationButton.swift in Sources */,
 				9C6EF7C42B844F1E000F4A55 /* LoginPageView.swift in Sources */,
 				9C398A2E2B86745A00B590DB /* HomeView.swift in Sources */,
 				9C398A302B86779900B590DB /* FAQView.swift in Sources */,
@@ -388,6 +404,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9C398A332B8D290200B590DB /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SvenTiigi/YouTubePlayerKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.7.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9C398A342B8D290200B590DB /* YouTubePlayerKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9C398A332B8D290200B590DB /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */;
+			productName = YouTubePlayerKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9C6EF7A62B7D6830000F4A55 /* Project object */;
 }
