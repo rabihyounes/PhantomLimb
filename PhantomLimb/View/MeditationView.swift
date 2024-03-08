@@ -22,18 +22,10 @@ struct MeditationView: View {
                 VideoView(player: player1)
                 VideoView(player: player2)
                 VideoView(player: player3)
-
-                Button {
-                    withAnimation {
+                MyCapsuleButton(buttontext: Text("Next"), buttonColor: .blue){
+                    withAnimation{
                         finish = true
                     }
-                } label: {
-                    Capsule()
-                        .frame(width: 150, height: 50)
-                        .overlay {
-                            Text("Next")
-                                .foregroundStyle(Color.white)
-                        }
                 }
                 .padding()
             }
@@ -66,15 +58,8 @@ struct MeditationFinishView: View {
     var dismiss: DismissAction
     var body: some View {
         Text("Congratulations! You've finished.")
-        Button {
+        MyCapsuleButton(buttontext: Text("Return"), buttonColor: .blue){
             dismiss()
-        } label: {
-            Capsule()
-                .frame(width: 150, height: 50)
-                .overlay {
-                    Text("Return")
-                        .foregroundStyle(Color.white)
-                }
         }
         .padding()
         .navigationBarBackButtonHidden()
@@ -82,5 +67,5 @@ struct MeditationFinishView: View {
 }
 
 #Preview {
-    MeditationView()
+        MeditationView()
 }

@@ -15,6 +15,7 @@ struct ContentView: View {
         }
         else {
             MainPageView()
+                .transition(.slide)
         }
     }
 }

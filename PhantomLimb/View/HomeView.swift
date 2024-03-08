@@ -12,6 +12,8 @@ struct HomeView: View {
         VStack {
             Text("Home")
                 .font(.custom("Raleway SemiBold", size: 27))
+                .offset(CGSize(width: 0, height: -40))
+                .shadow(radius: 10)
             MyNavigationButton(text: "Meditation") {
                 MeditationView()
             }
@@ -24,6 +26,7 @@ struct HomeView: View {
         }
     }
 }
+
 #Preview {
     HomeView()
 }

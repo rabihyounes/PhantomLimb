@@ -44,8 +44,10 @@ struct LoginPageView: View {
 
             //Login Button
             Button {
-                if !user.signIn(email: email, password: pw) {
-                    wrong_pw = true
+                withAnimation {
+                    if !user.signIn(email: email, password: pw) {
+                        wrong_pw = true
+                    }
                 }
             } label: {
                 ZStack {
@@ -60,7 +62,7 @@ struct LoginPageView: View {
             }
             .alert(isPresented: $wrong_pw) {
                 Alert(title: Text("Wrong Account"))
-                
+
             }
             .padding(10)
 

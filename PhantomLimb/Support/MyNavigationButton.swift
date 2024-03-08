@@ -35,6 +35,8 @@ struct MyNavigationButton<Content: View>: View {
                         .font(.custom("Raleway SemiBold", size: 20))
                         .foregroundStyle(Color.black)
                 }
+                .shadow(color: Color.black.opacity(0.3), radius: 10, x: 15, y: 15)
+                .shadow(color: Color.white.opacity(0.7), radius: 10, x: -5, y: -5)
         }
         .padding(10)
     }
