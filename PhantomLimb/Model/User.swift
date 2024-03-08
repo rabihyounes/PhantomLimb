@@ -8,14 +8,20 @@
 import SwiftUI
 
 @Observable
-class User {
+class User: Codable {
+    var id: String = ""
     var email: String = ""
     var isLogin: Bool = false
+    var username: String = ""
+    var cellnum: String = ""
 
-    convenience init(email: String = "", isLogin: Bool) {
+    convenience init(id: String = "", email: String = "", isLogin: Bool, username: String = "", cellnum: String = "") {
         self.init()
+        self.id = id
         self.email = email
         self.isLogin = isLogin
+        self.username = username
+        self.cellnum = cellnum
     }
 
     func signIn(email: String, password: String) -> Bool {

@@ -14,69 +14,76 @@ struct LoginPageView: View {
     @Environment(User.self) private var user
 
     var body: some View {
-        VStack(alignment: .center) {
-            Text("PhantomRehab")
-                .font(.custom("Raleway SemiBold", size: 27))
-                .offset(CGSize(width: 0, height: -140))
+        NavigationStack {
+            VStack(alignment: .center) {
+                Text("PhantomRehab")
+                    .font(.custom("Raleway SemiBold", size: 27))
+                    .offset(CGSize(width: 0, height: -140))
 
-            Text("Sign In")
-                .font(.custom("Nunito Regular", size: 27))
+                Text("Sign In")
+                    .font(.custom("Nunito Regular", size: 27))
 
-            //Username / Email
-            ZStack(alignment: .leading) {
-                TextField("Enter email", text: $email)
-                    .textFieldStyle(CapsuleTextFieldStyle())
-                Image("person-circle")
-                    .resizable()
-                    .frame(width: 28, height: 28)
-                    .padding(.leading, 15)
-            }
-
-            //Password
-            ZStack(alignment: .leading) {
-                SecureField("Enter password", text: $pw)
-                    .textFieldStyle(CapsuleTextFieldStyle())
-                Image("lock")
-                    .resizable()
-                    .frame(width: 30, height: 28)
-                    .padding(.leading, 15)
-            }
-
-            //Login Button
-            Button {
-                if !user.signIn(email: email, password: pw) {
-                    wrong_pw = true
+                //Username / Email
+                ZStack(alignment: .leading) {
+                    TextField("Enter email", text: $email)
+                        .textFieldStyle(CapsuleTextFieldStyle())
+                    Image("person-circle")
+                        .resizable()
+                        .frame(width: 28, height: 28)
+                        .padding(.leading, 15)
                 }
-            } label: {
-                ZStack {
-                    Capsule()
-                        .frame(height: 45)
-                        .containerRelativeFrame(.horizontal) { length, axis in
-                            return length * 0.4
-                        }
-                    Text("Login")
-                        .foregroundStyle(Color.black)
+
+                //Password
+                ZStack(alignment: .leading) {
+                    SecureField("Enter password", text: $pw)
+                        .textFieldStyle(CapsuleTextFieldStyle())
+                    Image("lock")
+                        .resizable()
+                        .frame(width: 30, height: 28)
+                        .padding(.leading, 15)
                 }
-            }
-            .alert(isPresented: $wrong_pw) {
-                Alert(title: Text("Wrong Account"))
+
+                //Login Button
+                Button {
+                    if !user.signIn(email: email, password: pw) {
+                        wrong_pw = true
+                    }
+                } label: {
+                    ZStack {
+                        Capsule()
+                            .frame(height: 45)
+                            .containerRelativeFrame(.horizontal) { length, axis in
+                                return length * 0.4
+                            }
+                        Text("Login")
+                            .foregroundStyle(Color.black)
+                    }
+                }
+                .alert(isPresented: $wrong_pw) {
+                    Alert(title: Text("Wrong Account"))
+                    
+                }
+                .padding(10)
                 
-            }
-            .padding(10)
+                NavigationLink {
+                    SignUpView()
+                        .navigationBarBackButtonHidden(true)
+                } label: {
+                    HStack(spacing: 2) {
+                        Text("Don't have an account?")
+                        Text("Sign Up")
+                            .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                    }
+                }
+                .padding(10)
 
-            Button {
-                //TODO
-            } label: {
-                Text("Sign Up")
+                Button {
+                    //TODO
+                } label: {
+                    Text("Forget my password")
+                }
+                .padding(10)
             }
-            .padding(10)
-
-            Button {
-                //TODO
-            } label: {
-                Text("Forget my password")
-            }
-            .padding(10)
         }
     }
 }
