@@ -12,6 +12,7 @@ struct LoginPageView: View {
     @State private var pw: String = ""
     @State private var wrong_pw: Bool = false
     @Environment(User.self) private var user
+    @EnvironmentObject var viewModel: AuthViewModel
 
     var body: some View {
         NavigationStack {
@@ -27,6 +28,7 @@ struct LoginPageView: View {
                 ZStack(alignment: .leading) {
                     TextField("Enter email", text: $email)
                         .textFieldStyle(CapsuleTextFieldStyle())
+                        .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
                     Image("person-circle")
                         .resizable()
                         .frame(width: 28, height: 28)
@@ -45,8 +47,11 @@ struct LoginPageView: View {
 
                 //Login Button
                 Button {
-                    if !user.signIn(email: email, password: pw) {
-                        wrong_pw = true
+//                    if !user.signIn(email: email, password: pw) {
+//                        wrong_pw = true
+//                    }
+                    Task {
+                        try await viewModel.signIn(withEmail: email, password: pw)
                     }
                 } label: {
                     ZStack {
@@ -106,4 +111,5 @@ struct CapsuleTextFieldStyle: TextFieldStyle {
 #Preview {
     LoginPageView()
         .environment(User())
+        .environmentObject(AuthViewModel())
 }

@@ -9,6 +9,7 @@ import Foundation
 import Firebase
 import FirebaseFirestoreSwift
 
+@MainActor
 class AuthViewModel: ObservableObject {
     @Published var userSession: FirebaseAuth.User?
     @Published var currentUser: User?
@@ -30,7 +31,7 @@ class AuthViewModel: ObservableObject {
             try await Firestore.firestore().collection("users").document(user.id).setData(encodedUser)
         }
         catch {
-            print("Failed to create user")
+            print("DEBUG: Failed to create user")
         }
     }
     
@@ -39,6 +40,6 @@ class AuthViewModel: ObservableObject {
     }
     
     func fetchUser() async {
-        
+        guard let uid = Auth.auth().currentUser?.uid else { return }
     }
 }

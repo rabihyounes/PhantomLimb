@@ -10,9 +10,9 @@ import SwiftUI
 struct ProfileView: View {
     var body: some View {
         VStack(alignment: .center) {
-            Text("PhantomRehab")
-                .font(.custom("Raleway SemiBold", size: 27))
-                .offset(CGSize(width: 0, height: 40))
+//            Text("PhantomRehab")
+//                .font(.custom("Raleway SemiBold", size: 27))
+//                .offset(CGSize(width: 0, height: 40))
             
             Text("Profile")
                 .font(.custom("Nunito Regular", size: 27))

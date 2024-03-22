@@ -30,6 +30,7 @@ struct SignUpView: View {
             ZStack(alignment: .leading) {
                 TextField("Enter username", text: $username)
                     .textFieldStyle(CapsuleTextFieldStyle())
+                    .autocapitalization(.none)
                 Image("person-circle")
                     .resizable()
                     .frame(width: 28, height: 28)
@@ -50,6 +51,7 @@ struct SignUpView: View {
             ZStack(alignment: .leading) {
                 TextField("Enter email", text: $email)
                     .textFieldStyle(CapsuleTextFieldStyle())
+                    .autocapitalization(.none)
                 Image("mail")
                     .resizable()
                     .frame(width: 28, height: 28)
@@ -129,6 +131,7 @@ struct SignUpView: View {
 
 #Preview {
     SignUpView()
+        .environmentObject(AuthViewModel())
 //        .environment(User())
 }
 

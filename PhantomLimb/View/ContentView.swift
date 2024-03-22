@@ -9,12 +9,19 @@ import SwiftUI
 
 struct ContentView: View {
     @Environment(User.self) private var user
+    @EnvironmentObject var viewModel: AuthViewModel
     var body: some View {
-        if !user.isLogin {
-            LoginPageView()
+//        if !user.isLogin {
+//            LoginPageView()
+//        }
+//        else {
+//            MainPageView()
+//        }
+        if viewModel.userSession != nil {
+            MainPageView()
         }
         else {
-            MainPageView()
+            LoginPageView()
         }
     }
 }
