@@ -15,7 +15,7 @@ struct SignUpView: View {
     @State private var confirm_pw: String = ""
     @Environment(\.dismiss) var dismiss
 //    @Environment(User.self) private var user
-    @EnvironmentObject var viewModel: AuthViewModel
+    @EnvironmentObject var viewModel: ViewModel
 
     var body: some View {
         VStack(alignment: .center) {
@@ -60,7 +60,7 @@ struct SignUpView: View {
 
             // password
             ZStack(alignment: .leading) {
-                SecureField("Enter password", text: $pw)
+                TextField("Enter password", text: $pw)
                     .textFieldStyle(CapsuleTextFieldStyle())
                 Image("lock")
                     .resizable()
@@ -70,7 +70,7 @@ struct SignUpView: View {
             
             // confirm password
             ZStack(alignment: .leading) {
-                SecureField("Confirm password", text: $confirm_pw)
+                TextField("Confirm password", text: $confirm_pw)
                     .textFieldStyle(CapsuleTextFieldStyle())
                 Image("lock")
                     .resizable()
@@ -85,6 +85,7 @@ struct SignUpView: View {
                                                    password: pw,
                                                    cellnum: cellnum,
                                                    username: username)
+                    dismiss()
                 }
             } label: {
                 ZStack {
@@ -131,7 +132,7 @@ struct SignUpView: View {
 
 #Preview {
     SignUpView()
-        .environmentObject(AuthViewModel())
+        .environmentObject(ViewModel())
 //        .environment(User())
 }
 

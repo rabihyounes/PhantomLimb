@@ -11,8 +11,7 @@ struct LoginPageView: View {
     @State private var email: String = ""
     @State private var pw: String = ""
     @State private var wrong_pw: Bool = false
-    @Environment(User.self) private var user
-    @EnvironmentObject var viewModel: AuthViewModel
+    @EnvironmentObject var viewModel: ViewModel
 
     var body: some View {
         NavigationStack {
@@ -28,7 +27,7 @@ struct LoginPageView: View {
                 ZStack(alignment: .leading) {
                     TextField("Enter email", text: $email)
                         .textFieldStyle(CapsuleTextFieldStyle())
-                        .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
+                        .autocapitalization( /*@START_MENU_TOKEN@*/.none /*@END_MENU_TOKEN@*/)
                     Image("person-circle")
                         .resizable()
                         .frame(width: 28, height: 28)
@@ -47,12 +46,7 @@ struct LoginPageView: View {
 
                 //Login Button
                 Button {
-//                    if !user.signIn(email: email, password: pw) {
-//                        wrong_pw = true
-//                    }
-                    Task {
-                        try await viewModel.signIn(withEmail: email, password: pw)
-                    }
+                    viewModel.signIn(withEmail: email, password: pw)
                 } label: {
                     ZStack {
                         Capsule()
@@ -66,10 +60,10 @@ struct LoginPageView: View {
                 }
                 .alert(isPresented: $wrong_pw) {
                     Alert(title: Text("Wrong Account"))
-                    
+
                 }
                 .padding(10)
-                
+
                 NavigationLink {
                     SignUpView()
                         .navigationBarBackButtonHidden(true)
@@ -77,7 +71,7 @@ struct LoginPageView: View {
                     HStack(spacing: 2) {
                         Text("Don't have an account?")
                         Text("Sign Up")
-                            .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                            .fontWeight( /*@START_MENU_TOKEN@*/.bold /*@END_MENU_TOKEN@*/)
                     }
                 }
                 .padding(10)
@@ -110,6 +104,5 @@ struct CapsuleTextFieldStyle: TextFieldStyle {
 
 #Preview {
     LoginPageView()
-        .environment(User())
-        .environmentObject(AuthViewModel())
+        .environmentObject(ViewModel())
 }

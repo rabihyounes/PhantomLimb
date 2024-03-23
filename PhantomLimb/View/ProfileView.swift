@@ -6,8 +6,10 @@
 //
 
 import SwiftUI
+import FirebaseAuth
 
 struct ProfileView: View {
+    @EnvironmentObject var viewModel:ViewModel
     var body: some View {
         VStack(alignment: .center) {
 //            Text("PhantomRehab")
@@ -45,7 +47,7 @@ struct ProfileView: View {
                 
                 Section {
                     ZStack(alignment: .leading) {
-                        Text("")
+                        Text("\(viewModel.email ?? "N/A")")
                             .textFieldStyle(CapsuleTextFieldStyle())
                         Image("mail")
                             .resizable()
@@ -88,4 +90,5 @@ struct ProfileView: View {
 
 #Preview {
     ProfileView()
+        .environmentObject(ViewModel())
 }

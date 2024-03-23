@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		561BC6C22B9BA41000551518 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561BC6C12B9BA41000551518 /* AuthViewModel.swift */; };
+		561BC6C22B9BA41000551518 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561BC6C12B9BA41000551518 /* ViewModel.swift */; };
 		56C5970C2B9A1D9300BBB64D /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C5970B2B9A1D9300BBB64D /* SignUpView.swift */; };
 		56C597102B9AA52500BBB64D /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C5970F2B9AA52500BBB64D /* ProfileView.swift */; };
 		56C597132B9ADECD00BBB64D /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 56C597122B9ADECD00BBB64D /* FirebaseAnalytics */; };
@@ -53,7 +53,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		561BC6C12B9BA41000551518 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		561BC6C12B9BA41000551518 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		56C5970B2B9A1D9300BBB64D /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		56C5970F2B9AA52500BBB64D /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		56C597482B9AE12700BBB64D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -166,7 +166,7 @@
 		9C6EF7C22B8436D2000F4A55 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				561BC6C12B9BA41000551518 /* AuthViewModel.swift */,
+				561BC6C12B9BA41000551518 /* ViewModel.swift */,
 				9C6EF7C82B85B44C000F4A55 /* User.swift */,
 			);
 			path = Model;
@@ -295,7 +295,7 @@
 				9C398A302B86779900B590DB /* FAQView.swift in Sources */,
 				9C6EF7CB2B8664B9000F4A55 /* MainPageView.swift in Sources */,
 				56C597102B9AA52500BBB64D /* ProfileView.swift in Sources */,
-				561BC6C22B9BA41000551518 /* AuthViewModel.swift in Sources */,
+				561BC6C22B9BA41000551518 /* ViewModel.swift in Sources */,
 				9C6EF7C92B85B44C000F4A55 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
