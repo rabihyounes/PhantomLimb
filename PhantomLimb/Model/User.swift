@@ -7,32 +7,11 @@
 
 import SwiftUI
 
-@Observable
-class User {
-    var email: String = ""
-    var isLogin: Bool = false
-
-    convenience init(email: String = "", isLogin: Bool) {
-        self.init()
-        self.email = email
-        self.isLogin = isLogin
-    }
-
-    func signIn(email: String, password: String) -> Bool {
-        if verifyCredentials(email: email, password: password) {
-            self.email = email
-            self.isLogin = true
-            return true
-        }
-        return false
-    }
-
-    private func verifyCredentials(email: String, password: String) -> Bool {
-        if email == "admin" && password == "1234" {
-            return true
-        }
-        return false
-    }
+struct User: Codable {
+    let id: String
+    let email: String
+    let username: String
+    let cellnum: String
 }
 //
 ////admin user for testing purpose

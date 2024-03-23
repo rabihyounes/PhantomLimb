@@ -30,7 +30,7 @@ struct MainPageView: View {
                             Label("Progress", systemImage: "star")
                         }
 
-                    Text("4th Tab")
+                    ProfileView()
                         .tabItem {
                             Label("Profile", systemImage: "person.crop.circle")
                         }

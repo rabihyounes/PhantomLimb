@@ -6,21 +6,22 @@
 //
 
 import SwiftUI
+import FirebaseAuth
 
 struct ContentView: View {
-    @Environment(User.self) private var user
+    @EnvironmentObject var viewModel: ViewModel
     var body: some View {
-        if !user.isLogin {
-            LoginPageView()
+        if Auth.auth().currentUser != nil {
+            MainPageView()
         }
         else {
-            MainPageView()
-                .transition(.slide)
+            LoginPageView()
+
         }
     }
 }
 
 #Preview {
     ContentView()
-        .environment(User(isLogin: false))
+        .environmentObject(ViewModel())
 }
