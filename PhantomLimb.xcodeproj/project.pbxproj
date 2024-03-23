@@ -50,6 +50,13 @@
 		9C6EF7C92B85B44C000F4A55 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6EF7C82B85B44C000F4A55 /* User.swift */; };
 		9C6EF7CB2B8664B9000F4A55 /* MainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6EF7CA2B8664B9000F4A55 /* MainPageView.swift */; };
 		9C6EF7CD2B86653E000F4A55 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6EF7CC2B86653E000F4A55 /* ContentView.swift */; };
+		9C7BDDFD2BAD292D006DEBCB /* ReminderHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7BDDFC2BAD292D006DEBCB /* ReminderHandler.swift */; };
+		9C8EA3912B9A6375002D7E43 /* TherapyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8EA3902B9A6375002D7E43 /* TherapyView.swift */; };
+		9C8EA3932B9A6629002D7E43 /* MirrorTherapyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8EA3922B9A6629002D7E43 /* MirrorTherapyView.swift */; };
+		9C8EA3972B9A67B6002D7E43 /* MyCapsuleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8EA3962B9A67B6002D7E43 /* MyCapsuleButton.swift */; };
+		9C8EA3992B9B8005002D7E43 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8EA3982B9B8005002D7E43 /* Camera.swift */; };
+		9C8EA39B2B9B8103002D7E43 /* CameraHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8EA39A2B9B8103002D7E43 /* CameraHandler.swift */; };
+		9C8EA39D2B9B850C002D7E43 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8EA39C2B9B850C002D7E43 /* CameraView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +76,14 @@
 		9C6EF7C82B85B44C000F4A55 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9C6EF7CA2B8664B9000F4A55 /* MainPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageView.swift; sourceTree = "<group>"; };
 		9C6EF7CC2B86653E000F4A55 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9C7BDDFC2BAD292D006DEBCB /* ReminderHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderHandler.swift; sourceTree = "<group>"; };
+		9C8EA3902B9A6375002D7E43 /* TherapyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TherapyView.swift; sourceTree = "<group>"; };
+		9C8EA3922B9A6629002D7E43 /* MirrorTherapyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirrorTherapyView.swift; sourceTree = "<group>"; };
+		9C8EA3962B9A67B6002D7E43 /* MyCapsuleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCapsuleButton.swift; sourceTree = "<group>"; };
+		9C8EA3982B9B8005002D7E43 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		9C8EA39A2B9B8103002D7E43 /* CameraHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHandler.swift; sourceTree = "<group>"; };
+		9C8EA39C2B9B850C002D7E43 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		9C8EA39E2B9BB4DF002D7E43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +144,7 @@
 		9C6EF7B02B7D6830000F4A55 /* PhantomLimb */ = {
 			isa = PBXGroup;
 			children = (
+				9C8EA39E2B9BB4DF002D7E43 /* Info.plist */,
 				9C6EF7B12B7D6830000F4A55 /* PhantomLimbApp.swift */,
 				9C6EF7C12B8436C4000F4A55 /* View */,
 				9C6EF7C22B8436D2000F4A55 /* Model */,
@@ -159,6 +175,9 @@
 				9C398A2D2B86745A00B590DB /* HomeView.swift */,
 				9C398A2F2B86779900B590DB /* FAQView.swift */,
 				9C398A312B8D220000B590DB /* MeditationView.swift */,
+				9C8EA3902B9A6375002D7E43 /* TherapyView.swift */,
+				9C8EA3922B9A6629002D7E43 /* MirrorTherapyView.swift */,
+				9C8EA39C2B9B850C002D7E43 /* CameraView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -168,6 +187,9 @@
 			children = (
 				561BC6C12B9BA41000551518 /* ViewModel.swift */,
 				9C6EF7C82B85B44C000F4A55 /* User.swift */,
+				9C8EA3982B9B8005002D7E43 /* Camera.swift */,
+				9C8EA39A2B9B8103002D7E43 /* CameraHandler.swift */,
+				9C7BDDFC2BAD292D006DEBCB /* ReminderHandler.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -176,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				9C398A362B8D36B200B590DB /* MyNavigationButton.swift */,
+				9C8EA3962B9A67B6002D7E43 /* MyCapsuleButton.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -286,13 +309,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C398A322B8D220000B590DB /* MeditationView.swift in Sources */,
+				9C8EA3932B9A6629002D7E43 /* MirrorTherapyView.swift in Sources */,
 				9C6EF7B22B7D6830000F4A55 /* PhantomLimbApp.swift in Sources */,
+				9C8EA39D2B9B850C002D7E43 /* CameraView.swift in Sources */,
+				9C7BDDFD2BAD292D006DEBCB /* ReminderHandler.swift in Sources */,
 				9C6EF7CD2B86653E000F4A55 /* ContentView.swift in Sources */,
 				9C398A372B8D36B200B590DB /* MyNavigationButton.swift in Sources */,
+				9C8EA3912B9A6375002D7E43 /* TherapyView.swift in Sources */,
 				9C6EF7C42B844F1E000F4A55 /* LoginPageView.swift in Sources */,
+				9C8EA39B2B9B8103002D7E43 /* CameraHandler.swift in Sources */,
+				9C8EA3972B9A67B6002D7E43 /* MyCapsuleButton.swift in Sources */,
 				9C398A2E2B86745A00B590DB /* HomeView.swift in Sources */,
 				56C5970C2B9A1D9300BBB64D /* SignUpView.swift in Sources */,
 				9C398A302B86779900B590DB /* FAQView.swift in Sources */,
+				9C8EA3992B9B8005002D7E43 /* Camera.swift in Sources */,
 				9C6EF7CB2B8664B9000F4A55 /* MainPageView.swift in Sources */,
 				56C597102B9AA52500BBB64D /* ProfileView.swift in Sources */,
 				561BC6C22B9BA41000551518 /* ViewModel.swift in Sources */,
@@ -433,6 +463,8 @@
 				DEVELOPMENT_TEAM = U6J58C8CJT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PhantomLimb/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app uses camera to capture videos.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -462,6 +494,8 @@
 				DEVELOPMENT_TEAM = U6J58C8CJT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PhantomLimb/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app uses camera to capture videos.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

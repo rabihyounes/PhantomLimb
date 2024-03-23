@@ -19,10 +19,11 @@ struct MainPageView: View {
                         }
                         .offset(CGSize(width: 0, height: -50))
 
-                    Text("Second Tab")
+                    TherapyView()
                         .tabItem {
                             Label("Therapy", systemImage: "pencil.and.list.clipboard")
                         }
+                        .offset(CGSize(width: 0, height: -50))
 
                     Text("third Tab")
                         .tabItem {
