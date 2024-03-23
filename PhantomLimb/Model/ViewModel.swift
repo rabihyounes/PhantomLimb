@@ -17,25 +17,29 @@ enum LoginStatus {
 
 //Data model for auth, store user therapy progress, etc..
 class ViewModel: ObservableObject {
-    private var uid:String? //current signed in user id
-    @Published var email:String? //current signed in email
-    
+    private var uid: String?  //current signed in user id
+    @Published var email: String?  //current signed in email
+    @Published var loginstatus: LoginStatus =
+        Auth.auth().currentUser == nil ? .SignedOut : .SignedIn
+
     init() {
         let currentUser = Auth.auth().currentUser
         self.uid = currentUser?.uid
         self.email = currentUser?.email
     }
-    
+
     func signIn(withEmail email: String, password: String) {
         Auth.auth()
             .signIn(withEmail: email, password: password) { [weak self] authResult, error in
                 guard let strongself = self else { return }
-                if error != nil{
+                if error != nil {
                     print("Sign In failed:\(error!)")
-                }else{
+                }
+                else {
                     DispatchQueue.main.async {
                         strongself.uid = authResult?.user.uid
                         strongself.email = authResult?.user.email
+                        strongself.loginstatus = .SignedIn
                     }
                 }
             }
@@ -60,9 +64,10 @@ class ViewModel: ObservableObject {
             let encodedUser = try Firestore.Encoder().encode(user)
             try await Firestore.firestore().collection("users").document(user.id)
                 .setData(encodedUser)
-            
+
             self.email = email
             self.uid = currentUser.uid
+            self.loginstatus = .SignedIn
         }
         catch {
             print("DEBUG: Failed to create user: \(error)")
@@ -72,9 +77,11 @@ class ViewModel: ObservableObject {
     func signOut() {
         let firebaseAuth = Auth.auth()
         do {
-          try firebaseAuth.signOut()
-        } catch let signOutError as NSError {
-          print("Error signing out: %@", signOutError)
+            try firebaseAuth.signOut()
+            self.loginstatus = .SignedOut
+        }
+        catch let signOutError as NSError {
+            print("Error signing out: %@", signOutError)
         }
     }
 }

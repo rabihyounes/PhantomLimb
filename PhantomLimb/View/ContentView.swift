@@ -11,7 +11,7 @@ import FirebaseAuth
 struct ContentView: View {
     @EnvironmentObject var viewModel: ViewModel
     var body: some View {
-        if Auth.auth().currentUser != nil {
+        if  viewModel.loginstatus == .SignedIn{
             MainPageView()
         }
         else {
