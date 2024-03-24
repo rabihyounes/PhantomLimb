@@ -57,4 +57,5 @@ struct MainPageView: View {
 
 #Preview {
     MainPageView()
+        .environmentObject(ViewModel())
 }

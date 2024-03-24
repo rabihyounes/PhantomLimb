@@ -51,6 +51,7 @@
 		9C6EF7CB2B8664B9000F4A55 /* MainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6EF7CA2B8664B9000F4A55 /* MainPageView.swift */; };
 		9C6EF7CD2B86653E000F4A55 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6EF7CC2B86653E000F4A55 /* ContentView.swift */; };
 		9C7BDDFD2BAD292D006DEBCB /* ReminderHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7BDDFC2BAD292D006DEBCB /* ReminderHandler.swift */; };
+		9C7FE3782BAFC8C700637A35 /* ReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7FE3772BAFC8C700637A35 /* ReminderView.swift */; };
 		9C8EA3912B9A6375002D7E43 /* TherapyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8EA3902B9A6375002D7E43 /* TherapyView.swift */; };
 		9C8EA3932B9A6629002D7E43 /* MirrorTherapyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8EA3922B9A6629002D7E43 /* MirrorTherapyView.swift */; };
 		9C8EA3972B9A67B6002D7E43 /* MyCapsuleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8EA3962B9A67B6002D7E43 /* MyCapsuleButton.swift */; };
@@ -77,6 +78,7 @@
 		9C6EF7CA2B8664B9000F4A55 /* MainPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageView.swift; sourceTree = "<group>"; };
 		9C6EF7CC2B86653E000F4A55 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9C7BDDFC2BAD292D006DEBCB /* ReminderHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderHandler.swift; sourceTree = "<group>"; };
+		9C7FE3772BAFC8C700637A35 /* ReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderView.swift; sourceTree = "<group>"; };
 		9C8EA3902B9A6375002D7E43 /* TherapyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TherapyView.swift; sourceTree = "<group>"; };
 		9C8EA3922B9A6629002D7E43 /* MirrorTherapyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirrorTherapyView.swift; sourceTree = "<group>"; };
 		9C8EA3962B9A67B6002D7E43 /* MyCapsuleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCapsuleButton.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				9C8EA3902B9A6375002D7E43 /* TherapyView.swift */,
 				9C8EA3922B9A6629002D7E43 /* MirrorTherapyView.swift */,
 				9C8EA39C2B9B850C002D7E43 /* CameraView.swift */,
+				9C7FE3772BAFC8C700637A35 /* ReminderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				9C8EA39D2B9B850C002D7E43 /* CameraView.swift in Sources */,
 				9C7BDDFD2BAD292D006DEBCB /* ReminderHandler.swift in Sources */,
 				9C6EF7CD2B86653E000F4A55 /* ContentView.swift in Sources */,
+				9C7FE3782BAFC8C700637A35 /* ReminderView.swift in Sources */,
 				9C398A372B8D36B200B590DB /* MyNavigationButton.swift in Sources */,
 				9C8EA3912B9A6375002D7E43 /* TherapyView.swift in Sources */,
 				9C6EF7C42B844F1E000F4A55 /* LoginPageView.swift in Sources */,

@@ -22,6 +22,10 @@ class ViewModel: ObservableObject {
     @Published var loginstatus: LoginStatus =
         Auth.auth().currentUser == nil ? .SignedOut : .SignedIn
 
+    @Published var laterality_reminders:[String] = []
+    @Published var motor_reminder:String?
+    @Published var mirror_reminder:String?
+    
     init() {
         let currentUser = Auth.auth().currentUser
         self.uid = currentUser?.uid

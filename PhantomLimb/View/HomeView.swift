@@ -18,7 +18,7 @@ struct HomeView: View {
                 MeditationView()
             }
             MyNavigationButton(text: "Reminder") {
-                FAQView()
+                ReminderView()
             }
             MyNavigationButton(text: "FAQs") {
                 FAQView()
