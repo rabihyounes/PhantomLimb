@@ -17,14 +17,44 @@ enum LoginStatus {
 
 //Data model for auth, store user therapy progress, etc..
 class ViewModel: ObservableObject {
+    private(set) var notificationManager = NotificationManager()
     private var uid: String?  //current signed in user id
     @Published var email: String?  //current signed in email
     @Published var loginstatus: LoginStatus =
         Auth.auth().currentUser == nil ? .SignedOut : .SignedIn
 
-    @Published var laterality_reminders:[String] = []
-    @Published var motor_reminder:String?
-    @Published var mirror_reminder:String?
+    @Published var laterality_reminders:[String] = []{
+        didSet {
+            //cancel the old reminders, set the new reminders
+            for reminder in oldValue{
+                notificationManager.cancelNotification(therapyType: .Laterality, notificationTimeString: reminder)
+            }
+            for new_reminder in laterality_reminders{
+                notificationManager.scheduleNotification(therapyType: .Laterality, notificationTimeString: new_reminder)
+            }
+        }
+    }
+    
+    @Published var motor_reminder:String?{
+        didSet{
+            if let old_reminder = oldValue{
+                notificationManager.cancelNotification(therapyType: .Motor, notificationTimeString: old_reminder)
+            }
+            if let new_reminder = motor_reminder{
+                notificationManager.scheduleNotification(therapyType: .Motor, notificationTimeString: new_reminder)
+            }
+        }
+    }
+    @Published var mirror_reminder:String?{
+        didSet{
+            if let old_reminder = oldValue{
+                notificationManager.cancelNotification(therapyType: .Mirror, notificationTimeString: old_reminder)
+            }
+            if let new_reminder = motor_reminder{
+                notificationManager.scheduleNotification(therapyType: .Mirror, notificationTimeString: new_reminder)
+            }
+        }
+    }
     
     init() {
         let currentUser = Auth.auth().currentUser
