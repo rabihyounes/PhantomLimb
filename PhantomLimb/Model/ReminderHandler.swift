@@ -23,9 +23,40 @@ enum TherapyType: String {
     case Mirror = "Mirror Therapy"
 }
 
-struct NotificationManager {
+class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
+    private(set) var notification_denied: Bool = false
+    //Handle with notification when the app is running foreground
+    
+    
+    override init() {
+        super.init()
+        UNUserNotificationCenter.current().delegate = self
+    }
+    
+    func userNotificationCenter(
+        _ center: UNUserNotificationCenter,
+        willPresent notification: UNNotification,
+        withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) ->
+            Void
+    ) {
+        let id = notification.request.identifier
+        print("In App: Notification ID = \(id)")
+        completionHandler([.banner, .sound])
+    }
+
+    //Handle with notificaiton when the app is at background
+    func userNotificationCenter(
+        _ center: UNUserNotificationCenter,
+        didReceive response: UNNotificationResponse,
+        withCompletionHandler completionHandler: @escaping () -> Void
+    ) {
+        let id = response.notification.request.identifier
+        print("Background: Notification ID = \(id)")
+        completionHandler()
+    }
+
     // Request user authorization for notifications
-    static func requestNotificationAuthorization() {
+    func requestNotificationAuthorization() {
         UNUserNotificationCenter.current()
             .requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
                 if success {
@@ -37,7 +68,9 @@ struct NotificationManager {
             }
     }
 
-    static func getNotificationContent(therapyType: TherapyType) -> UNMutableNotificationContent {
+    private func getNotificationContent(
+        therapyType: TherapyType
+    ) -> UNMutableNotificationContent {
         // Instantiate a variable for UNMutableNotificationContent
         let content = UNMutableNotificationContent()
         // The notification title
@@ -55,33 +88,57 @@ struct NotificationManager {
     }
 
     // Schedule daily notification at user-selected time
-    static func scheduleNotification(therapyType: TherapyType, notificationTimeString: String) {
+    func scheduleNotification(therapyType: TherapyType, notificationTimeString: String) {
+        // Schedule the notification
+        UNUserNotificationCenter.current()
+            .getNotificationSettings { [weak self] settings in
+                guard let strongSelf = self else { return }
+                switch settings.authorizationStatus {
+                    case .authorized, .provisional:
+                        let request = strongSelf.prepareNotification(
+                            therapyType: therapyType,
+                            notificationTimeString: notificationTimeString
+                        )
+                        UNUserNotificationCenter.current().add(request)
+                        print("\(request.identifier) added")
+                    case .notDetermined:
+                        strongSelf.requestNotificationAuthorization()
+                    case .denied:
+                        strongSelf.notification_denied = true
+                    default:
+                        break
+                }
+            }
+    }
+
+    private func prepareNotification(
+        therapyType: TherapyType,
+        notificationTimeString: String
+    ) -> UNNotificationRequest {
         // Convert the time in string to date
-        guard let date = DateHelper.dateFormatter.date(from: notificationTimeString) else {
-            return
-        }
+        let date = DateHelper.dateFormatter.date(from: notificationTimeString)
 
         let content = getNotificationContent(therapyType: therapyType)
 
         // Set the notification to repeat daily for the specified hour and minute
-        let dateComponents = Calendar.current.dateComponents([.hour, .minute], from: date)
+        let dateComponents = Calendar.current.dateComponents([.hour, .minute], from: date!)
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
 
-        // We need the identifier "journalReminder" so that we can cancel it later if needed
-        // The identifier name could be anything, up to you
+        // We need the identifier so that we can cancel it later if needed
         let request = UNNotificationRequest(
             identifier: "\(therapyType.rawValue)&&\(notificationTimeString)",
             content: content,
             trigger: trigger
         )
-
-        // Schedule the notification
-        UNUserNotificationCenter.current().add(request)
+        return request
     }
 
     // Cancel any scheduled notifications
-    static func cancelNotification(therapyType: TherapyType, notificationTimeString: String) {
+    func cancelNotification(therapyType: TherapyType, notificationTimeString: String) {
         UNUserNotificationCenter.current()
-            .removePendingNotificationRequests(withIdentifiers: ["\(therapyType.rawValue)&&\(notificationTimeString)"])
+            .removePendingNotificationRequests(withIdentifiers: [
+                "\(therapyType.rawValue)&&\(notificationTimeString)"
+            ])
+        print("\(therapyType.rawValue)&&\(notificationTimeString) cancelled")
     }
 }
