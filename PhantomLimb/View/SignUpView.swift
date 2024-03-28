@@ -115,21 +115,6 @@ struct SignUpView: View {
     }
 }
 
-//struct CapsuleTextFieldStyle: TextFieldStyle {
-//    func _body(configuration: TextField<Self._Label>) -> some View {
-//        configuration
-//            .padding(EdgeInsets(top: 25, leading: 60, bottom: 25, trailing: 16))
-//            .background(
-//                Capsule()
-//                    .fill(Color.gray.opacity(0.3))
-//                    .frame(height: 50)
-//            )
-//            .containerRelativeFrame(.horizontal) { length, axis in
-//                return length * 0.7
-//            }
-//    }
-//}
-
 #Preview {
     SignUpView()
         .environmentObject(ViewModel())

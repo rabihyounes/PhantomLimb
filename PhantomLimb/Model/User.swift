@@ -13,8 +13,8 @@ struct User: Codable {
     let username: String
     let cellnum: String
 }
-//
-////admin user for testing purpose
+
+
 //class AdminUser: User {
 //    var password: String
 //
